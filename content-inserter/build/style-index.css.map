@@ -1,0 +1,1 @@
+{"version":3,"file":"./style-index.css","mappings":";;;AAAA;EACC;EACA;EACA;AACD,C","sources":["webpack://content-inserter/./src/style.scss"],"sourcesContent":[".content-inserter-wrapper {\n\tdisplay: flex;\n\tflex-direction:column;\n\talign-items:stretch;\n}\n\n"],"names":[],"sourceRoot":""}

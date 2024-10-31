@@ -1,0 +1,80 @@
+// OPTIONAL UI THING TO TURN OFF IN_BETWEEN BLOCK INSERT BUTTON
+.block-editor-block-popover__inbetween {
+	display: none;
+	pointer-events: none;
+}
+
+.wp-block-beard-block-content-inserter {
+	position: relative;
+	border: 2px dashed #ddd;
+	padding: 20px;
+	min-height: 100px;
+	transition: all 0.2s ease-in-out;
+
+	// Selection state
+	&.is-selected, &.has-child-selected {
+		border-color: #007cba;
+		border-style: solid;
+		box-shadow: 0 0 0 1px #fff, 0 0 0 3px #007cba;
+
+		&::before {
+			content: "Content Inserter";
+			position: absolute;
+			top: -25px;
+			left: 0;
+			font-size: 12px;
+			background: #007cba;
+			color: white;
+			padding: 2px 8px;
+			border-radius: 2px;
+			z-index: 1;
+		}
+	}
+
+	// Hover state when not selected
+	&:not(.is-selected):not(.has-child-selected):hover {
+		border-color: #949494;
+	}
+
+	// Inner blocks spacing
+	.block-editor-inner-blocks {
+		.block-editor-block-list__layout {
+			> [data-type] {
+				margin-top: 10px;
+				margin-bottom: 10px;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	// Selected child block
+	[data-type].is-selected {
+		outline: 1px solid #777;
+		outline-offset: 2px;
+	}
+
+	.block-list-appender {
+		position: relative!important;
+		width: 100%!important;
+
+		.components-button.block-editor-button-block-appender{
+			background-color: rgba(177, 177, 177, 0.15)
+		}
+	}
+}
+
+// Add styles for dragging state
+.is-dragging-components-draggable {
+	.wp-block-beard-block-content-inserter {
+		border-color: #007cba;
+		box-shadow: 0 0 0 1px #fff, 0 0 0 3px #007cba;
+	}
+}
+
